@@ -19,7 +19,7 @@ pipeline {
 		}
 		stage("Build") {
 			steps {
-				sh 'docker-compose build web'
+				sh '/usr/bin/docker-compose build web'
 			}
 		}
 		stage("test") {
@@ -36,7 +36,7 @@ pipeline {
 		}
 		stage("deploy") {
 			steps {
-				sh "docker-compose up -d"
+				sh "/usr/bin/docker-compose up -d"
 			}
 		}
 	}
